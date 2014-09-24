@@ -1,13 +1,23 @@
 rsWPI
 =====
-<pre>
+```PoSh
 rsWPI MyWPI
 {
     Product = "UrlRewrite2"
 }
-</pre>
+```
 
-Web Platform Applications
+Example with Additional Arguments with installation with increased time.
+```PoSh
+rsWPI MVC4
+{
+    Product = "MVC4Vs2010_Loc"
+    Timeout = 2400
+    AdditionalArgs = "/SQLPassword:ILoveaGoodPassword!"
+}
+```
+
+Web Platform Products
 
 ID|Title 
 ----- | -------
