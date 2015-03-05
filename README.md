@@ -7,13 +7,22 @@ rsWPI MyWPI
 }
 ```
 
-Example with Additional Arguments with installation with increased time.
+Example with Additional Arguments with installation.
 ```PoSh
 rsWPI MVC4
 {
     Product = "MVC4Vs2010_Loc"
-    Timeout = 2400
     AdditionalArgs = "/SQLPassword:ILoveaGoodPassword!"
+}
+```
+
+Example with Additional Arguments and forced reboot.
+```PoSh
+rsWPI SQLExpress
+{
+    Product = "SQLExpressAdv"
+    AdditionalArgs = "/SQLPassword:ILoveaGoodPassword2!"
+    ForceReboot = $true
 }
 ```
 
