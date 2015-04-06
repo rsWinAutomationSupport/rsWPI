@@ -3,6 +3,5 @@ class RS_rsWPI : OMI_BaseResource
 {
     [key, Description("ProductID from Product feed-list")]String Product;
     [write, Description("Install string arguments")]String AdditionalArgs;
-	  [write, Description("Execution Timeout Period(historical element)")]uint32 timeout;
     [write, Description("Force-reboot if requested by installer")]Boolean ForceReboot;
 };
