@@ -32,10 +32,10 @@ function Set-TargetResource
     {
         try
         {
-            if ( -not (Test-Path "C:\rs-pkgs\webpi.msi") )
+            if ( -not (Test-Path "C:\Windows\Temp\webpi.msi") )
             {
                 Write-Verbose "Downloading WPI.msi"
-                Invoke-WebRequest 'http://download.microsoft.com/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi' -OutFile "C:\rs-pkgs\webpi.msi"
+                Invoke-WebRequest 'http://download.microsoft.com/download/C/F/F/CFF3A0B8-99D4-41A2-AE1A-496C08BEB904/WebPlatformInstaller_amd64_en-US.msi' -OutFile "C:\Windows\Temp\webpi.msi"
             }
         }
         catch [Exception]
@@ -44,7 +44,7 @@ function Set-TargetResource
             return
         }
         Write-Verbose "Installing WPI"
-        $process = Start-Process msiexec -ArgumentList "/i C:\rs-pkgs\webpi.msi /qn"  -wait -NoNewWindow -PassThru
+        $process = Start-Process msiexec -ArgumentList "/i C:\Windows\Temp\webpi.msi /qn"  -wait -NoNewWindow -PassThru
         if ( $process.ExitCode -ne 0 ) { Write-Debug "Error Installing WebPI" }
         else { Write-Verbose "Web Platform Installer Completed Successfully"}
     }
